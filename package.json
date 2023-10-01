@@ -1,5 +1,5 @@
 {
-  "name": "mx-sdk-js-metamask-provider",
+  "name": "@merops/mx-sdk-js-metamask-provider",
   "version": "0.1.0",
   "description": "Signing provider for dApps: Metamask Wallet (browser extension).",
   "main": "out/index.js",
