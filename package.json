@@ -1,0 +1,21 @@
+{
+  "name": "mx-sdk-js-metamask-provider",
+  "version": "1.0.0",
+  "description": "Signing provider for dApps: Metamask Wallet (browser extension).",
+  "main": "out/index.js",
+  "types": "out/index.d.js",
+  "files": [
+    "out/**/*"
+  ],
+  "scripts": {
+    "compile": "tsc -p tsconfig.json",
+    "pretest": "npm run compile",
+    "prepare": "npm run compile"
+  },
+  "author": "Mer0ps",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@metamask/providers": "^13.0.0",
+    "@multiversx/sdk-core": "^12.9.0"
+  }
+}
