@@ -24,6 +24,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         run: npm publish --access=public
-        - name: Clean up
+      - name: Clean up
         run: |
           rm .env.production
