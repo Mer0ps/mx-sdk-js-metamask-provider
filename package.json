@@ -1,6 +1,6 @@
 {
   "name": "mx-sdk-js-metamask-provider",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Signing provider for dApps: Metamask Wallet (browser extension).",
   "main": "out/index.js",
   "types": "out/index.d.js",
