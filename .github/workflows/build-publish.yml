@@ -12,9 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Rename .env.production
-        run: |
-          cp .env.production.dist .env
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -24,6 +21,3 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
         run: npm publish --access=public
-      - name: Clean up
-        run: |
-          rm .env
