@@ -81,6 +81,21 @@ import { defaultSnapOrigin } from "./config";
           }) as string;
 
         this.account.address = address;
+
+        if(token){
+          const tokenSigned = await window.ethereum.request({
+            method: 'wallet_invokeSnap',
+            params: {
+              snapId: defaultSnapOrigin,
+              request: {
+                method: `mvx_signAuthToken`,
+                params: { token : token },
+              },
+            },
+          }) as string;
+
+          this.account.signature = tokenSigned;
+        }
       } catch (error: any) {
         throw error;
       }
@@ -91,20 +106,11 @@ import { defaultSnapOrigin } from "./config";
       if (!this.initialized) {
         throw new Error("Metamask provider is not initialised, call init() first");
       }
-      try {
-        throw new Error("not implemented");
-        // await window.ethereum.logout();
-        //this.disconnect();
-      } catch (error) {
-        console.warn("Metamask logout operation failed!", error);
-      }
+      
+      this.account = { address: "" };
   
       return true;
     }
-  
-    // private disconnect() {
-    //   this.account = { address: "" };
-    // }
   
     async getAddress(): Promise<string> {
       if (!this.initialized) {
